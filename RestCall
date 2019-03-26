@@ -1,0 +1,6 @@
+private WhoIs whoIs(String ssnId, HttpServletResponse response) throws Exception {
+		
+		WhoIs whoIs = new RestTemplate().getForObject("url",WhoIs.class);
+		response.addHeader("whoIs", new Gson().toJson(whoIs));
+		return whoIs;
+	}
